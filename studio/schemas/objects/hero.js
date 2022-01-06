@@ -9,6 +9,11 @@ export default {
       title: "Heading",
     },
     {
+      name: "heading_2",
+      type: "string",
+      title: "Heading_2",
+    },
+    {
       name: "tagline",
       type: "simplePortableText",
       title: "Tagline",
