@@ -1,22 +1,4 @@
-@tailwind base;
-
-/* Write your own custom base styles here */
-
-/* Start purging... */
-@tailwind components;
-/* Stop purging. */
-
-/* Write your own custom component styles here */
-.btn-blue {
-  @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
-}
-
-/* Start purging... */
-@tailwind utilities;
-/* Stop purging. */
-
-/* Your own custom utilities */
-
+@charset "UTF-8";
 /* ==========================================================================
                                 FONTS
 ============================================================================= */
@@ -3402,4 +3384,3 @@ footer .bt-links li a {
 }
 
 /*# sourceMappingURL=style.css.map */
-
