@@ -2,6 +2,8 @@ import Error from "next/error";
 import { useRouter } from "next/router";
 import { getClient, usePreviewSubscription } from "../utils/sanity";
 import ProductsPage from "../components/ProductsPage";
+import NavBar from "../components/Layout/NavBar";
+import Hero from "../components/Hero";
 
 const query = `//groq
   *[_type == "product" && defined(slug.current)]
@@ -20,155 +22,9 @@ function IndexPage(props) {
   });
 
   return (
-    <body>
-        <div class="wrapper">
-            
-            <header>
-                <div class="container">
-                    <div class="header-content d-flex flex-wrap align-items-center">
-                        <div class="menu-btn">
-                            <a href="#" title="">
-                                <span class="bar1"></span>
-                                <span class="bar2"></span>
-                                <span class="bar3"></span>
-                            </a>
-                        </div>
-                        <div class="logo">
-                            <a href="index.html" title="">
-                                <img src="images/logo.png" alt="" />
-                            </a>
-                        </div>
-                        <nav>
-                            <ul>
-                                <li><a class="active" href="index.html" title="">Home</a></li>
-                                <li><a href="about.html" title="">About Us</a></li>
-                                <li><a href="services.html" title="">Services</a></li>
-                                <li><a href="blog.html" title="">News</a></li>
-                                <li><a href="contact.html" title="">Contact</a></li>
-                            </ul>
-                        </nav>
-                        <ul class="contact-head-info ml-auto">
-                            <li>
-                                <img src="images/phone.svg" alt="" />
-                                <span>+44 62 7146 9812</span>
-                            </li>
-                            <li>
-                                <img src="images/mail.svg" alt="" />
-                                <a href="mailto:example@example.com" title="">info@zeus.com</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </header>
-
-            <div class="burger-menu">
-                <a href="#" title="" class="close-menu">
-                    <i class="flaticon-close"></i>
-                </a>
-                <div class="menu-middle">
-                    <div class="container">
-                        <div class="main-menu">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="menu-widget">
-                                        <h4>SOCIAL MEDIA</h4>
-                                        <ul>
-                                            <li><a href="#" title="">Twitter</a></li>
-                                            <li><a href="#" title="">Linkedin</a></li>
-                                            <li><a href="#" title="">Instagram</a></li>
-                                            <li><a href="#" title="">Facebook</a></li>
-                                            <li><a href="#" title="">Telegram</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="menu-widget">
-                                        <h4>COMPANY</h4>
-                                        <ul>
-                                            <li><a href="about.html" title="">About Us</a></li>
-                                            <li><a href="team.html" title="">Our Team</a></li>
-                                            <li><a href="prices.html" title="">Prices</a></li>
-                                            <li><a href="contact.html" title="">Contact</a></li>
-                                            <li><a href="blog.html" title="">News</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="menu-widget">
-                                        <h4>Services</h4>
-                                        <ul>
-                                            <li><a href="services.html" title="">Judicial protection</a></li>
-                                            <li><a href="services.html" title="">Lawyer consulting</a></li>
-                                            <li><a href="services.html" title="">Debt collection</a></li>
-                                            <li><a href="services.html" title="">Protection of rights</a></li>
-                                            <li><a href="services.html" title="">Real estate lawyer</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu-footer">
-                    <div class="container">
-                        <div class="row align-items-center">
-                            <div class="col-md-4">
-                                <div class="menu-footer-logo">
-                                    <img src="images/logo.png" alt="" />
-                                </div>
-                            </div>
-                            <div class="col-md-8">
-                                <ul class="contact-menu-links">
-                                    <li>
-                                        <p>340 Woodland Dr. <br /> Southaven, MS 38671</p>
-                                    </li>
-                                    <li><span>+44 62 7146 9812</span></li>
-                                    <li><a href="example@exmaple.com" title="">info@zeus.com</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <section class="main-banner overlay">
-                <div class="container">
-                    <div class="main-banner-content">
-                        <div class="social-links">
-                            <ul>
-                                <li><a href="#" title=""><i class="fab fa-linkedin"></i></a></li>
-                                <li><a href="#" title=""><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#" title=""><i class="fab fa-facebook-f"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="banner-text">
-                            <h2>Simple solution <br /> to complex <br /> questions</h2>
-                            <a href="contact.html" title="">Receive consultation</a>
-                            <ul class="counter-row">
-                                <li>
-                                    <h2><span class="count">21</span>/%</h2>
-                                    <span>charges dropped</span>
-                                </li>
-                                <li>
-                                    <h2><span class="count">82</span>%</h2>
-                                    <span>countersuit filed</span>
-                                </li>
-                                <li>
-                                    <h2><span class="count">57</span>%</h2>
-                                    <span>cases dismissed</span>
-                                </li>
-                                <li>
-                                    <h2><span class="count">77</span>%</h2>
-                                    <span>cases won</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="banner-img wow fadeInUp" data-wow-duration="1000ms">
-                            <img src="https://via.placeholder.com/618x820" alt="" class="w-100" />
-                        </div>
-                    </div>
-                </div>
-            </section>
+          <>
+            <NavBar/>
+            <Hero/>
 
             <section class="block">
                 <div class="container">
@@ -707,20 +563,7 @@ function IndexPage(props) {
                     </div>
                 </div>
             </footer>
-
-
-
-        </div>
-
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/lib/slick/slick.js"></script>
-        <script src="js/html5lightbox.js"></script>
-        <script src="js/counter.js"></script>
-        <script src="js/wow.min.js"></script>
-        <script src="js/scripts.js"></script>
-
-    </body>
+        </>
   );
 }
 
